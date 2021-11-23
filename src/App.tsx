@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Person from './components/Person';
+import MyPerson from './components/MyPerson';
+import ListPerson from './components/ListPerson';
+import UserLoggin from './components/UserLoggin';
 
-function App() {
+const App = () => {
+  const name = {
+    first: 'Trần Ty',
+    last: 'Phon',
+  };
+  const names = [
+    {
+      first: 'Trần Ty',
+      last: 'Phon',
+    },
+    {
+      first: 'Trần Ty',
+      last: 'Pin',
+    },
+  ];
+  const isLoggin = false;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Person first="Trần" last="Phon" />
+      <MyPerson name={name} />
+      <ListPerson names={names} />
+      <UserLoggin isLoggin={isLoggin} name={name} />
+    </>
   );
-}
+};
 
 export default App;
