@@ -1,32 +1,17 @@
-import React from 'react';
-import Person from './components/Person';
-import MyPerson from './components/MyPerson';
-import ListPerson from './components/ListPerson';
-import UserLoggin from './components/UserLoggin';
+import Status from './components/Status';
+import { Heading } from './components/Heading';
+import { OsCar } from './components/Oscar';
+import { Greet } from './components/Greet';
 
 const App = () => {
-  const name = {
-    first: 'Trần Ty',
-    last: 'Phon',
-  };
-  const names = [
-    {
-      first: 'Trần Ty',
-      last: 'Phon',
-    },
-    {
-      first: 'Trần Ty',
-      last: 'Pin',
-    },
-  ];
-  const isLoggin = false;
-
   return (
     <>
-      <Person first="Trần" last="Phon" />
-      <MyPerson name={name} />
-      <ListPerson names={names} />
-      <UserLoggin isLoggin={isLoggin} name={name} />
+      <Status status="error" />
+      <Heading>Hello world</Heading>
+      <OsCar>
+        <Heading>My name is Phon</Heading>
+      </OsCar>
+      <Greet name="Phon" messageCount={10} isLoggin={true} />
     </>
   );
 };
